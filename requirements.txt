@@ -1,0 +1,31 @@
+# Core data & ML stack
+
+# numpy==1.26
+# pandas==2.2
+xarray==2024.1
+netCDF4==1.6
+zarr==2.16
+h3==3.7
+geopandas==0.14
+
+# Async download & task orchestration
+
+aiohttp==3.9
+prefect==2.15
+tqdm==4.66
+
+# Machine learning
+
+# torch==2.2  # CPU/GPU вариант подбирается по CUDA
+# scikit-learn==1.4
+# optuna==3.6
+
+# Visualization & reports
+
+matplotlib==3.9
+pdfkit==1.0
+PyYAML==6.0
+
+# Optional (for INT8 TensorRT export, Linux x86\_64 with CUDA ≥11.8)
+
+# tensorrt==10.0

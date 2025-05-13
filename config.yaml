@@ -1,0 +1,48 @@
+# config.yaml — общие параметры дипломного прототипа
+
+# --- Путь к данным и моделям
+
+paths:
+raw\_dir: data/raw
+processed\_dir: data/processed
+models\_dir: models
+reports\_dir: reports
+
+# --- DGGS / H3 параметры
+
+geo:
+dggs\_level: 8          # H3 resolution (\~1 km)
+bbox\_default:          # Балтийский полигон "lon\_min lat\_min lon\_max lat\_max"
+\- 9.0
+\- 53.0
+\- 32.0
+\- 66.0
+
+# --- Dataset pipeline settings
+
+pipeline:
+years: \[2023]
+era\_vars: \[u10, swh]
+
+# --- Training hyper‑params (defaults; Optuna переопределит)
+
+training:
+batch: 8
+mlp:
+lr: 3e-4
+dropout: 0.3
+epochs: 15
+unet:
+lr: 1e-4
+weight\_decay: 1e-5
+epochs: 30
+tv\_weight: 0.05
+dice\_weight: 2.0
+
+# --- Evaluation thresholds
+
+evaluation:
+s\_threshold: 0.7
+target\_rmse: 0.18      # ε\_S регламент
+target\_dice: 0.80      # τ Dice
+target\_far:  0.12      # максимальный FAR
